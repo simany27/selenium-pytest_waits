@@ -73,13 +73,11 @@ def test_all_pets_have_name_age_type():
         if names[i].text == '':
             empty_names += 1
 
-    pytest.driver.implicitly_wait(10)
     types = pytest.driver.find_elements(By.XPATH, '//*[@id="all_my_pets"]/table/tbody/tr/td[2]')
     for i in range(len(types)):
         if types[i].text == '':
             empty_types += 1
 
-    pytest.driver.implicitly_wait(10)
     ages = pytest.driver.find_elements(By.XPATH, '//*[@id="all_my_pets"]/table/tbody/tr/td[3]')
     for i in range(len(ages)):
         if ages[i].text == '':
@@ -114,9 +112,7 @@ def test_not_repeated_pets():
 
     pytest.driver.implicitly_wait(5)
     names = pytest.driver.find_elements(By.XPATH, '//*[@id="all_my_pets"]/table/tbody/tr/td[1]')
-    pytest.driver.implicitly_wait(5)
     types = pytest.driver.find_elements(By.XPATH, '//*[@id="all_my_pets"]/table/tbody/tr/td[2]')
-    pytest.driver.implicitly_wait(5)
     ages = pytest.driver.find_elements(By.XPATH, '//*[@id="all_my_pets"]/table/tbody/tr/td[3]')
 
     my_pets = []
